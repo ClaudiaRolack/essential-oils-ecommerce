@@ -11,64 +11,13 @@
      background-color: white;
  }
 
- header {
-     background-color: #6d7a71;
-     display: flex;
-     flex-direction: row;
-     flex-wrap: wrap;
-     justify-content: space-evenly;
-     align-items: center;
-
- }
-
  /* MENU */
 
- .logo {
-     width: 200px;
-     margin-left: 30px;
+ .navbar {
+     background-color: #6d7a71;
  }
 
- .menu {
-     list-style-type: none;
-     width: 600px;
-     display: flex;
-     justify-content: space-around;
-     align-items: center;
-     flex-direction: row;
-     flex-wrap: wrap;
-     text-align: center;
-     gap: 10px;
- }
-
- .menu__item li {
-     width: 150px;
- }
-
- .menu__item a {
-     color: #efeadd;
-     text-decoration: none;
-     display: flex;
-
-     flex-direction: row;
-     flex-wrap: wrap;
- }
-
- .menu__item.active,
- .menu__item a:hover {
-     text-decoration: underline;
- }
-
- .buscador {
-     display: flex;
-     flex-direction: row;
-     justify-content: center;
-     align-items: flex-end;
-     border-radius: 10px;
-     border-color: rgb(208, 209, 212);
-     padding: 5px;
- }
-
- /* INICIO - NOSOTROS */
+ /* NOSOTROS */
 
  .imgportada {
      display: flex;
@@ -88,7 +37,8 @@
 
  .card {
      width: 250px;
-     border: none display: flex;
+     border: none;
+     display: flex;
      flex-direction: column;
      gap: 10px;
  }
@@ -214,13 +164,13 @@
      grid-column-gap: 25px;
      grid-template-areas:
          "blog1 blog2 blog3";
-     
+
      display: flex;
      justify-content: center;
      align-items: center;
      padding: 25px;
  }
- 
+
  .blog1 {
      grid-area: blog1;
      width: 500px;
@@ -231,9 +181,9 @@
 
 
  .blog1__imagen {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
  }
 
  .blog2 {
@@ -244,9 +194,9 @@
  }
 
  .blog2__imagen {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
  }
 
  .blog3 {
@@ -257,39 +207,39 @@
  }
 
  .blog3__imagen {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
  }
 
  .textoimagenblog {
-    position: absolute;
-    top: 70%;
-    left: 20%;
-    right: 10%;
-    color: white;
-    font-size: 2rem;
-    text-align: end
-  }
+     position: absolute;
+     top: 70%;
+     left: 20%;
+     right: 10%;
+     color: white;
+     font-size: 2rem;
+     text-align: end
+ }
 
-  .opacidad {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.5s;
-  }
+ .opacidad {
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     background-color: rgba(0, 0, 0, 0.5);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     opacity: 0;
+     transition: opacity 0.5s;
+ }
 
-  .textoimagenblog:hover {
-    transition: .5s;
-    opacity: 0.5;
-  }
+ .textoimagenblog:hover {
+     transition: .5s;
+     opacity: 0.5;
+ }
 
  /* PRODUCTOS */
 
@@ -396,6 +346,38 @@
      width: 50px;
  }
 
+ /* MENUFOOTER */
+
+ .menu {
+     list-style-type: none;
+     width: 600px;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     flex-direction: row;
+     flex-wrap: wrap;
+     text-align: center;
+     gap: 10px;
+ }
+
+ .menu__item li {
+     width: 150px;
+ }
+
+ .menu__item a {
+     color: #efeadd;
+     text-decoration: none;
+     display: flex;
+
+     flex-direction: row;
+     flex-wrap: wrap;
+ }
+
+ .menu__item.active,
+ .menu__item a:hover {
+     text-decoration: underline;
+ }
+
  /* NOSOTROS */
 
  .main__nosotros {
@@ -403,8 +385,8 @@
  }
 
  .nosotros {
-     padding: 40px;
-     gap: 40px;
+     padding: 25px;
+     gap: 25px;
  }
 
  .h2__nosotros {
@@ -415,7 +397,7 @@
 
  .p__nosotros {
      display: flex;
-     padding: 50px;
+     padding: 25px;
      font-size: 30px;
  }
 
@@ -451,7 +433,7 @@
      flex-direction: column;
      justify-items: center;
      align-items: center;
-     gap: 40px
+     gap: 25px
  }
 
  .form__nombre,
@@ -476,3 +458,4 @@
      display: flex;
      justify-content: end;
  }
+
