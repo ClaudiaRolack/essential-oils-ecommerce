@@ -11,24 +11,14 @@
      background-color: white;
  }
 
- /* MENU */
-
- .navbar {
-     background-color: #6d7a71;
+ textarea {
+     resize: none;
  }
 
- /* NOSOTROS */
-
- .imgportada {
-     display: flex;
-     flex-direction: column;
-     align-items: stretch;
- }
 
  /* TARJETITAS */
 
  .tarjetitas {
-     padding: 25px;
      display: flex;
      flex-wrap: wrap;
      justify-content: center;
@@ -52,24 +42,40 @@
      transform: translate(0, -10px);
  }
 
- .cartita__a {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
-     padding: 15px;
-     text-decoration: none;
-     color: #6d7a71;
-     font-size: 25px;
+ /* MENU */
+
+ .navbar {
+     background-color: #6d7a71;
  }
 
+ .nav-link {
+     color: #efeadd;
+ }
 
- /*INICIO*/
+ .nav-link:hover {
+     color: white;
+ }
+
+ .nav-link.active {
+     color: white !important;
+ }
+
+ .form-control:focus {
+     outline: none !important;
+     box-shadow: none !important;
+     border-color: transparent;
+ }
+
+ .dropdown-item.active {
+     background-color: #6d7a71 !important;
+ }
+
+ /* INICIO */
 
  .productosnuevos,
  .lomascomprado {
      display: flex;
      justify-content: center;
-     color: #ba806a;
      background-color: white;
      font-size: 20px;
  }
@@ -84,10 +90,7 @@
      color: #6d7a71;
      font-size: 20px;
      padding: 20px;
-
  }
-
- /* SECCION FOTOS */
 
  .fotos {
      display: grid;
@@ -155,7 +158,7 @@
      color: white;
  }
 
- /* SECCION BLOG */
+ /* INICIO SECCION BLOG */
 
  .blog {
      display: grid;
@@ -238,22 +241,36 @@
 
  .textoimagenblog:hover {
      transition: .5s;
-     opacity: 0.5;
+     opacity: 1;
  }
 
- /* PRODUCTOS */
+ /* NOSOTROS */
 
- .main__productos {
+ .imgportada {
      display: flex;
-     justify-content: center;
-     background-color: white;
+     flex-direction: column;
+     align-items: stretch;
  }
 
- .tarjetitas__productos {
+ .main__nosotros {
+     display: block;
+ }
+
+ .nosotros {
+     padding: 25px;
+     gap: 25px;
+ }
+
+ .h1__nosotros {
      display: flex;
-     flex-wrap: wrap;
      justify-content: center;
-     gap: 40px;
+     font-size: 40px;
+ }
+
+ .p__nosotros {
+     display: flex;
+     padding: 25px;
+     font-size: 30px;
  }
 
  /* ACEITES INDIVIDUALES */
@@ -268,7 +285,7 @@
  }
 
  .tarjetitas__aceitesindividuales {
-     padding: 40px;
+     padding: 25px;
      display: flex;
      flex-wrap: wrap;
      justify-content: center;
@@ -286,11 +303,87 @@
  }
 
  .tarjetitas__mezclas {
-     padding: 40px;
+     padding: 25px;
      display: flex;
      flex-wrap: wrap;
      justify-content: center;
      gap: 25px;
+ }
+
+
+ .tracking-in-expand {
+     animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+ }
+
+ @keyframes tracking-in-expand {
+     0% {
+         letter-spacing: -0.5em;
+         opacity: 0;
+     }
+
+     40% {
+         opacity: 0.6;
+     }
+
+     100% {
+         opacity: 1;
+     }
+ }
+
+ /* FORM */
+
+ .main__contacto {
+     display: flex;
+     align-items: center;
+ }
+
+ .cajitaform {
+     width: 100%;
+ }
+
+ .cajitaform__titulo {
+     color: #6d7a71;
+     text-align: center;
+ }
+
+ .tarjetitaform {
+     display: grid;
+     grid-template-rows: 100px 100px 100px 100px;
+     flex-direction: column;
+     justify-items: center;
+     align-items: center;
+     gap: 10px
+ }
+
+ .form__nombre,
+ .form__email {
+     display: flex;
+     width: 250px;
+     padding: 5px;
+ }
+
+ .form__mensaje {
+     display: flex;
+     width: 400px;
+     padding: 5px;
+ }
+
+ button {
+     background-color: #6d7a71;
+     color: #efeadd;
+     padding: 10px;
+     border: none;
+     border-radius: 5px;
+ }
+
+ .imagenaceitesform {
+     width: 100%;
+     height: 100%;
+ }
+
+ .imagenaceitesform img {
+     width: 100%;
+     height: 100%;
  }
 
  /* FOOTER*/
@@ -335,6 +428,7 @@
  .grupo3__logo {
      display: flex;
      flex-direction: row;
+     justify-content: center;
      width: 100px;
      padding: 10px;
      gap: 10px;
@@ -352,10 +446,9 @@
      list-style-type: none;
      width: 600px;
      display: flex;
-     justify-content: space-around;
+     justify-content: space-evenly;
      align-items: center;
      flex-direction: row;
-     flex-wrap: wrap;
      text-align: center;
      gap: 10px;
  }
@@ -370,7 +463,6 @@
      display: flex;
 
      flex-direction: row;
-     flex-wrap: wrap;
  }
 
  .menu__item.active,
@@ -378,84 +470,146 @@
      text-decoration: underline;
  }
 
- /* NOSOTROS */
 
- .main__nosotros {
-     display: block;
+ @media screen and (max-width: 1024px) {
+
+     /* CONTACTO */
+
+     .imagenaceitesform {
+         align-content: flex-start;
+     }
+
+     .main__contacto {
+         flex-direction: column;
+     }
+
+     .cajitaform {
+         width: 100%;
+     }
+
+     .cajitaform__titulo {
+         padding-top: 25px;
+     }
+
  }
 
- .nosotros {
-     padding: 25px;
-     gap: 25px;
+ @media screen and (max-width: 768px) {
+
+     /* TARJETITAS */
+
+     .tarjetitas {
+         gap: 0;
+     }
+
  }
 
- .h2__nosotros {
-     display: flex;
-     justify-content: center;
-     font-size: 40px;
+ @media screen and (max-width: 600px) {
+
+     /* TARJETITAS */
+
+     .card {
+         width: 180px;
+     }
+
+     /* INICIO SECCION FOTOS */
+
+     .textodeimagen {
+         font-size: 2rem;
+     }
+
+     /* INICIO SECCION BLOG */
+
+     .blog {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 20px;
+     }
+
+     .blog1,
+     .blog2,
+     .blog3 {
+         width: 430px;
+         height: 430px;
+     }
+
+     /* FOOTER */
+
+     .grupo2 {
+         padding: 0;
+     }
+
+          /* MENUFOOTER */
+
+          .menu {
+            width: 200px;
+            padding: 0;
+   
+            flex-direction: column;
+        }
+
  }
 
- .p__nosotros {
-     display: flex;
-     padding: 25px;
-     font-size: 30px;
+ @media screen and (max-width: 480px) {
+
+     /* TARJETITAS */
+
+     .card {
+         width: 250px;
+     }
+
+     /* MENUFOOTER */
+
+     .menu {
+         width: 200px;
+         padding: 0;
+
+         flex-direction: column;
+     }
+
  }
 
+ @media screen and (max-width: 400px) {
 
- /* FORM */
+     /* MENU */
 
- .main__contacto {
-     min-height: 100vh;
-     display: flex;
-     justify-content: center;
-     align-items: center;
+     .navbar-brand {
+         width: 100px;
+     }
+
+     .navbar-brand img {
+         width: 100%;
+     }
+
+     /* INICIO SECCION FOTOS */
+
+     .textodeimagen {
+         font-size: 1rem;
+     }
+
+     /* FORM */
+
+     .form__nombre,
+     .form__email {
+         width: 150px;
+     }
+
+     .form__mensaje {
+         width: 200px;
+     }
+
+     /* FOOTER */
+
+     .grupo1 {
+         width: 250px;
+     }
+
+     .grupo1 img {
+         width: 100%;
+     }
+
+     /* MENUFOOTER */
+
+     .menu {
+         width: 200px;
+     }
  }
-
- .cajitaform {
-     width: 80%;
-     padding: 20px;
-     display: flexbox;
-     justify-content: center;
-     align-items: center;
- }
-
- .cajitaform h1 {
-     color: #6d7a71;
-     text-align: center;
-     padding-bottom: 25px;
- }
-
- .tarjetitaform {
-     width: 100%;
-     display: grid;
-     grid-template-columns: 1fr;
-     grid-template-rows: 100px 100px 100px 100px 100px;
-     flex-direction: column;
-     justify-items: center;
-     align-items: center;
-     gap: 25px
- }
-
- .form__nombre,
- .form__email,
- .form__mensaje {
-     display: flex;
-     flex-direction: row;
-     width: 250px;
-     padding: 5px;
- }
-
- button {
-     background-color: #6d7a71;
-     color: #e8d7c7;
-     padding: 10px;
-     border: none;
-     border-radius: 10px;
- }
-
- .imagenaceitesform {
-     width: 100%;
-     display: flex;
-     justify-content: end;
- }
-
