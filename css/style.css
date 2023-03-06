@@ -247,13 +247,12 @@
  /* NOSOTROS */
 
  .imgportada {
-     /* display: flex;
-     flex-direction: column; */
      width: 100%;
  }
 
  .imgportada img {
-    width: 100%;
+     width: 100%;
+     object-fit: cover;
  }
 
  .main__nosotros {
@@ -507,7 +506,7 @@
 
      /* NOSOTROS */
 
-     
+
 
      /* INICIO SECCION FOTOS */
 
