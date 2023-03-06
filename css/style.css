@@ -384,6 +384,7 @@
  .imagenaceitesform img {
      width: 100%;
      height: 100%;
+     object-fit: cover;
  }
 
  /* FOOTER*/
@@ -501,6 +502,12 @@
          gap: 0;
      }
 
+     /* INICIO SECCION FOTOS */
+
+     .textodeimagen {
+         font-size: 2rem;
+     }
+
  }
 
  @media screen and (max-width: 600px) {
@@ -538,14 +545,14 @@
          padding: 0;
      }
 
-          /* MENUFOOTER */
+     /* MENUFOOTER */
 
-          .menu {
-            width: 200px;
-            padding: 0;
-   
-            flex-direction: column;
-        }
+     .menu {
+         width: 200px;
+         padding: 0;
+
+         flex-direction: column;
+     }
 
  }
 
