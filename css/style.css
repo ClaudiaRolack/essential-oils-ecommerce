@@ -267,13 +267,13 @@
  .h1__nosotros {
      display: flex;
      justify-content: center;
-     font-size: 40px;
+     font-size: 3rem;
  }
 
  .p__nosotros {
      display: flex;
      padding: 25px;
-     font-size: 30px;
+     font-size: 2rem;
  }
 
  /* ACEITES INDIVIDUALES */
@@ -506,7 +506,9 @@
 
      /* NOSOTROS */
 
-
+     .imgportada img {
+         object-fit: cover;
+     }
 
      /* INICIO SECCION FOTOS */
 
