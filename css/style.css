@@ -247,9 +247,13 @@
  /* NOSOTROS */
 
  .imgportada {
-     display: flex;
-     flex-direction: column;
-     align-items: stretch;
+     /* display: flex;
+     flex-direction: column; */
+     width: 100%;
+ }
+
+ .imgportada img {
+    width: 100%;
  }
 
  .main__nosotros {
@@ -384,7 +388,6 @@
  .imagenaceitesform img {
      width: 100%;
      height: 100%;
-     object-fit: cover;
  }
 
  /* FOOTER*/
@@ -501,6 +504,10 @@
      .tarjetitas {
          gap: 0;
      }
+
+     /* NOSOTROS */
+
+     
 
      /* INICIO SECCION FOTOS */
 
