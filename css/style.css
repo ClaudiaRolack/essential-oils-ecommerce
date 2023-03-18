@@ -85,7 +85,7 @@
      display: flex;
      justify-content: center;
      align-items: center;
-     font-weight: lighterloek 99 i;
+     font-weight: 99;
      background-color: white;
      color: #6d7a71;
      font-size: 20px;
@@ -225,6 +225,11 @@
      text-align: end
  }
 
+ .textoimagenblog:hover {
+     transition: .5s;
+     opacity: 1;
+ }
+
  .opacidad {
      position: absolute;
      top: 0;
@@ -239,9 +244,8 @@
      transition: opacity 0.5s;
  }
 
- .textoimagenblog:hover {
-     transition: .5s;
-     opacity: 1;
+ .estiloblog {
+    z-index: 100;
  }
 
  /* NOSOTROS */
