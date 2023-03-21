@@ -1,0 +1,48 @@
+.main__nosotros {
+    display: block;
+
+    .imgportada {
+        width: 100%;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+
+            @include tablet {
+                object-fit: cover;
+            }
+        }
+    }
+
+    .nosotros {
+        padding: 25px;
+        gap: 25px;
+
+        .h1__nosotros {
+            display: flex;
+            justify-content: center;
+            font-size: 3rem;
+            color: $mainColor;
+        }
+
+        .p__nosotros1 {
+            padding: 25px;
+            font-size: 2rem;
+        }
+
+        .p__nosotros2 {
+            padding: 25px;
+            font-size: 2rem;
+
+            a {
+                color: $mainColor;
+                text-decoration: none;
+
+                &:hover {
+                    color: $secundaryColor;
+                }
+            }
+
+        }
+    }
+}

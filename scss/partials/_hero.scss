@@ -1,0 +1,258 @@
+/* FOTOS */
+
+.fotos {
+    display: grid;
+    grid-template-columns: repeat (4, 1fr);
+    grid-template-areas:
+        "foto1 foto2 foto3 foto4"
+        "foto1 foto2 foto3 foto4";
+
+    position: relative;
+
+    .foto1 {
+        grid-area: foto1;
+        width: 100%;
+        height: 100%;
+        border-right: solid 5px white;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .foto2 {
+        grid-area: foto2;
+        width: 100%;
+        height: 100%;
+        border-right: solid 5px white;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .foto3 {
+        grid-area: foto3;
+        width: 100%;
+        height: 100%;
+        border-right: solid 5px white;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .foto4 {
+        grid-area: foto4;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .opacidad {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 25px;
+        opacity: 0;
+
+        .textodeimagen {
+            color: white;
+            font-size: 4rem;
+            text-align: start;
+
+            @include tablet {
+                font-size: 2rem;
+            }
+
+            @include tabletsmall {
+                font-size: 2rem;
+            }
+
+            @include mobilesmall {
+                font-size: 1rem;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+
+    .opacidad {
+        opacity: 1;
+    }
+}
+
+/* BLOG */
+
+.blog {
+    display: grid;
+    grid-template-columns: 500px 500px 500px;
+    grid-template-rows: 500px;
+    grid-column-gap: 25px;
+    grid-template-areas:
+        "blog1 blog2 blog3";
+
+    @include flex (center, center);
+    padding: 25px;
+
+    @include tabletsmall {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .blog1 {
+        grid-area: blog1;
+        width: 500px;
+        height: 500px;
+        position: relative;
+
+        @include tabletsmall {
+            width: 430px;
+            height: 430px;
+        }
+
+        .blog1__imagen {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .textoimagenblog {
+            position: absolute;
+            top: 70%;
+            left: 20%;
+            right: 10%;
+            color: white;
+            font-size: 2rem;
+            text-align: end
+        }
+
+        .opacidad {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            @include flex (center, center);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .textoimagenblog:hover {
+            transition: .5s;
+            opacity: 1;
+        }
+    }
+
+    .blog2 {
+        grid-area: blog2;
+        width: 500px;
+        height: 500px;
+        position: relative;
+
+        @include tabletsmall {
+            width: 430px;
+            height: 430px;
+        }
+
+        .blog2__imagen {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .textoimagenblog {
+            position: absolute;
+            top: 70%;
+            left: 20%;
+            right: 10%;
+            color: white;
+            font-size: 2rem;
+            text-align: end
+        }
+
+        .opacidad {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .textoimagenblog:hover {
+            transition: .5s;
+            opacity: 1;
+        }
+    }
+
+    .blog3 {
+        grid-area: blog3;
+        width: 500px;
+        height: 500px;
+        position: relative;
+
+        @include tabletsmall {
+            width: 430px;
+            height: 430px;
+        }
+
+        .blog3__imagen {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .textoimagenblog {
+            position: absolute;
+            top: 70%;
+            left: 20%;
+            right: 10%;
+            color: white;
+            font-size: 2rem;
+            text-align: end
+        }
+
+        .opacidad {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .textoimagenblog:hover {
+            transition: .5s;
+            opacity: 1;
+        }
+    }
+}

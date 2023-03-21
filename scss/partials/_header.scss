@@ -1,0 +1,31 @@
+.navbar {
+    background-color: $mainColor;
+
+    .navbar-brand {
+        @include mobilesmall {
+            width: 100px;
+        }
+
+        img {
+            @include mobilesmall {
+                width: 100%;
+            }
+        }
+    }
+
+    .nav-link {
+        color: $secundaryColor;
+    }
+
+    .nav-link:hover {
+        color: white;
+    }
+
+    .nav-link.active {
+        color: white !important;
+    }
+
+    .dropdown-item.active {
+        background-color: $mainColor !important;
+    }
+}

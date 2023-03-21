@@ -1,0 +1,108 @@
+.piedepagina {
+    background-color: $mainColor;
+    display: grid;
+    grid-template-areas:
+        "grupo1"
+        "grupo2"
+        "grupo3";
+    justify-items: center;
+    align-items: center;
+
+    .grupo1 {
+        grid-area: grupo1;
+        width: 350px;
+        padding-top: 20px;
+
+        @include mobilesmall {
+            width: 250px;
+        }
+
+        img {
+            width: 100%;
+
+            @include mobilesmall {
+                width: 100%;
+            }
+        }
+    }
+
+    .grupo2 {
+        grid-area: grupo2;
+        color: $secundaryColor;
+        @include flex(center, center);
+        flex-wrap: wrap;
+        padding: 10px;
+
+        @include tabletsmall {
+            padding: 0;
+        }
+
+        .menu {
+            list-style-type: none;
+            width: 600px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: row;
+            text-align: center;
+            gap: 10px;
+
+            @include tabletsmall {
+                width: 200px;
+                padding: 0;
+                flex-direction: column;
+            }
+
+            @include mobile {
+                width: 200px;
+                padding: 0;
+                flex-direction: column;
+            }
+
+            @include mobilesmall {
+                width: 200px;
+            }
+
+            li {
+                width: 150px;
+
+                a {
+                    color: $secundaryColor;
+                    text-decoration: none;
+                    display: flex;
+
+                    flex-direction: row;
+                }
+
+                .menu__item.active,
+                .menu__item a:hover {
+                    text-decoration: underline;
+                }
+            }
+
+        }
+    }
+
+    .grupo3 {
+        grid-area: grupo3;
+        color: $secundaryColor;
+        padding: 25px;
+
+        .grupo3__logo {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100px;
+            padding: 10px;
+            gap: 10px;
+
+            .insta,
+            .face {
+                display: flex;
+                width: 50px;
+            }
+        }
+
+    }
+
+}
