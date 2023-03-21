@@ -1,0 +1,29 @@
+.titulo__aceitesindividuales {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 25px;
+    font-size: 30px;
+    color: $mainColor;
+}
+
+.tarjetitas__aceitesindividuales {
+    @include tarjetasaceites (wrap, center, 25px, 25px);
+
+    .carta {
+        width: 250px;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .tarjetitasai__imagen {
+            width: 100%;
+            transition: .5s;
+
+            &:hover {
+                transform: translate(0, -10px);
+            }
+        }
+    }
+}

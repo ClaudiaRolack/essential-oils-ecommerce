@@ -1,0 +1,78 @@
+/* INICIO */
+
+.tarjetitas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+
+    @include tablet {
+        gap: 0;
+    }
+
+    .card {
+        width: 250px;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include tabletsmall {
+            width: 180px;
+        }
+
+        @include mobile {
+            width: 250px;
+        }
+
+        .cartita__imagen {
+            width: 100%;
+            transition: .5s;
+
+            &:hover {
+                transform: translate(0, -10px);
+            }
+        }
+
+    }
+}
+
+/* PRODUCTOS */
+/* INICIO */
+
+.productosnuevos__titulo,
+.lomascomprado__titulo {
+    @include flex (center, center);
+    font-weight: 99;
+    background-color: white;
+    color: $mainColor;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.productosnuevos,
+.lomascomprado {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    font-size: 20px;
+}
+
+.tracking-in-expand {
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

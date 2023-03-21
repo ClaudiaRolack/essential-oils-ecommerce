@@ -562,7 +562,6 @@
      .menu {
          width: 200px;
          padding: 0;
-
          flex-direction: column;
      }
 
