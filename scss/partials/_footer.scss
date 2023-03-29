@@ -39,7 +39,7 @@
 
         .menu {
             list-style-type: none;
-            width: 600px;
+            width: 400px;
             display: flex;
             justify-content: space-evenly;
             align-items: center;
@@ -66,12 +66,33 @@
             li {
                 width: 150px;
 
+                @include mobile {
+                    width: 100px;
+                }
+
+                @include mobilesmall {
+                    width: 100px;
+
+                }
+
+
                 a {
                     color: $secundaryColor;
                     text-decoration: none;
                     display: flex;
-
                     flex-direction: row;
+
+                    @include tabletsmall {
+                        flex-direction: column;
+                    }
+
+                    @include mobile {
+                        flex-direction: column;
+                    }
+
+                    @include mobilesmall {
+                        flex-direction: column;
+                    }
                 }
 
                 .menu__item.active,

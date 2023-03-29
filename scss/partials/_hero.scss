@@ -141,7 +141,16 @@
             right: 10%;
             color: white;
             font-size: 2rem;
-            text-align: end
+            text-align: center;
+
+            a {
+                text-decoration: none;
+                color: white;
+
+                &:hover {
+                    color: $secundaryColor;
+                }
+            }
         }
 
         .opacidad {
@@ -186,7 +195,16 @@
             right: 10%;
             color: white;
             font-size: 2rem;
-            text-align: end
+            text-align: center;
+
+            a {
+                text-decoration: none;
+                color: white;
+
+                &:hover {
+                    color: $secundaryColor;
+                }
+            }
         }
 
         .opacidad {
@@ -233,7 +251,16 @@
             right: 10%;
             color: white;
             font-size: 2rem;
-            text-align: end
+            text-align: center;
+
+            a {
+                text-decoration: none;
+                color: white;
+
+                &:hover {
+                    color: $secundaryColor;
+                }
+            }
         }
 
         .opacidad {

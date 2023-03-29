@@ -16,6 +16,10 @@
         flex-direction: column;
         gap: 10px;
 
+        @include mobile {
+            width: 150px;
+        }
+
         .tarjetitasai__imagen {
             width: 100%;
             transition: .5s;
