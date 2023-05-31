@@ -694,6 +694,36 @@ textarea {
   border-radius: 5px;
 }
 
+.form__registro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+}
+.form__registro .registro__boton {
+  background-color: #6d7a71;
+  color: #efeadd;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.registro__error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.registro__mostrarinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .piedepagina {
   background-color: #6d7a71;
   display: grid;

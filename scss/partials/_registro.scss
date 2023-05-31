@@ -1,0 +1,38 @@
+.form__registro {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+
+    .registro__boton {
+
+        background-color: $mainColor;
+        color: $secundaryColor;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+
+}
+
+.registro__error {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.registro__mostrarinfo {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
