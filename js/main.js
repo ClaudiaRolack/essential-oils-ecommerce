@@ -1,7 +1,6 @@
 // ****************************************** REGISTRO ******************************************
 
-let registrarme = document.querySelector("#registrarme")
-registrarme.addEventListener("click", register)
+
 
 // contenedores del dom
 function register(e) {
@@ -72,24 +71,26 @@ function register(e) {
 
     let usuario = {
         correoElectronico: correoElectronicoFormateado,
-        contraseña: contraseña, 
+        contraseña: contraseña,
         nombre: nombreFormateado,
         primerApellido: primerApellidoFormateado,
         direccion: direccionFormateado
     }
 
-    let usuarioString = JSON.stringify(usuario) 
+    let usuarioString = JSON.stringify(usuario)
     localStorage.setItem('usuario', usuarioString)
-    divError.innerHTML = "" 
+    divError.innerHTML = ""
     mostrarInfo()
 }
 
+//let registrarme = document.querySelector("#registrarme")
+//registrarme.addEventListener("click", register)
 // ****************************************** MOSTRAR INFORMACIÓN ******************************************
 
 function mostrarInfo() {
     let usuario = localStorage.getItem('usuario')
     let usuarioJSON = JSON.parse(usuario)
-    let {nombre, primerApellido} = JSON.parse(usuario)
+    let { nombre, primerApellido } = JSON.parse(usuario)
 
     let usuarioDiv = document.querySelector("#usuario")
     usuarioDiv.innerHTML = `
@@ -101,3 +102,80 @@ function mostrarInfo() {
                 </ul>
                 `
 }
+
+// ****************************************** Creador de Objetos ******************************************
+class ai {
+    constructor(id, producto, precio) {
+        this.id = id;
+        this.producto = producto;
+        this.precio = precio;
+    }
+}
+
+class am {
+    constructor(id, producto, precio) {
+        this.id = id;
+        this.producto = producto;
+        this.precio = precio;
+    }
+}
+
+const contenedorDeProductos = document.querySelector("#contenedor")
+
+function productosDesdeJs() { }
+
+// ****************************************** GENERADOR DE TARJETAS ******************************************
+
+for (let producto of productosai) {
+    contenedorDeProductos.innerHTML += `
+    <div class= "row">
+        <div class="carta col-md-2">
+            <img class="tarjetitasai__imagen" src=${producto.img} />
+            <p>$${producto.precio} </p>
+            <button class="agregar" id=${producto.id}>Agregar</button>
+        </div>
+    </div>
+    `
+}
+
+// ************************************************** CARRITO *************************************************
+
+/*
+    1. Localstorage
+        1.1 Validar la existencia del carrito en el local storage.
+    2. Crear la funcion agregar
+        2.1 Validar la existencia del carrito en el local storage.
+        2.2 Nos traemos el array de nuestro carrito del localstorage
+        2.3 Agregamos el nuevo producto al carrito
+        2.4 SetItem en local storage
+
+
+*/
+const carrito = []
+//let agregar = document.querySelectorAll(".agregar")
+
+function agregarAlCarrito (producto) {
+    carrito.push(producto);
+  }
+  
+  function eliminarDelCarrito (indice) {
+    carrito.splice(indice, 1);
+  }
+
+  function calcularTotalCarrito() {
+    var total = 0;
+    for (var i = 0; i < carrito.length; i++) {
+      total += carrito[i].precio;
+    }
+    return total;
+  }
+// let registrarme = document.querySelector("#registrarme")
+// registrarme.addEventListener("click", register)
+
+//let agregarAlCarrito = document.querySelector("")
+let botones = document.querySelectorAll(".agregar")
+botones.forEach(boton => {
+    boton.addEventListener('click', () => {
+        let idProducto = boton.id;
+    })
+})

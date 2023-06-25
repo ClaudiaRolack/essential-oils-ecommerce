@@ -115,6 +115,15 @@ textarea {
     width: 100%;
   }
 }
+.navbar .carrito {
+  width: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navbar .carrito img {
+  width: 100%;
+}
 .navbar .nav-link {
   color: #efeadd;
 }
