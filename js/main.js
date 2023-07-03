@@ -120,23 +120,43 @@ class am {
     }
 }
 
-const contenedorDeProductos = document.querySelector("#contenedor")
 
-function productosDesdeJs() { }
+
 
 // ****************************************** GENERADOR DE TARJETAS ******************************************
+const contenedorDeProductos = document.querySelector("#contenedor");
 
-for (let producto of productosai) {
-    contenedorDeProductos.innerHTML += `
-    <div class= "row">
-        <div class="carta col-md-2">
-            <img class="tarjetitasai__imagen" src=${producto.img} />
-            <p>$${producto.precio} </p>
-            <button class="agregar" id=${producto.id}>Agregar</button>
-        </div>
-    </div>
-    `
+// TARJETAS AI
+const urlActual = window.location.href;
+console.log(urlActual)
+for (let producto of productos) {
+    if ('http://127.0.0.1:5500/pages/aceitesindividuales.html' === urlActual) {
+        if (producto.tipo === 'ai') {
+            contenedorDeProductos.innerHTML += `
+        <div class= "row">
+            <div class="carta col-md-2">
+                <img class="tarjetitasai__imagen" src=${producto.img} />
+                <p>$${producto.precio} </p>
+                <button class="agregar ${producto.tipo}" id=${producto.id}>Agregar</button>
+            </div>
+        </div
+        `
+        }
+    } else if ('http://127.0.0.1:5500/pages/mezclas.html' === urlActual) {
+        if (producto.tipo === 'am') {
+            contenedorDeProductos.innerHTML += `
+            <div class= "row">
+                <div class="carta col-md-2">
+                    <img class="tarjetitasai__imagen" src=${producto.img} />
+                    <p>$${producto.precio} </p>
+                    <button class="agregar ${producto.tipo}" id=${producto.id}>Agregar</button>
+                </div>
+            </div>
+            `
+        }
+    }
 }
+
 
 // ************************************************** CARRITO *************************************************
 
@@ -151,31 +171,72 @@ for (let producto of productosai) {
 
 
 */
-const carrito = []
-//let agregar = document.querySelectorAll(".agregar")
 
-function agregarAlCarrito (producto) {
-    carrito.push(producto);
-  }
-  
-  function eliminarDelCarrito (indice) {
-    carrito.splice(indice, 1);
-  }
+function agregarAlCarrito(id) {
+    let carrito = JSON.parse(localStorage.getItem('carrito'));
 
-  function calcularTotalCarrito() {
+    if (!carrito) {
+        carrito = [];
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+    }
+
+    const productoElegido = productos.find(producto => producto.id === id);
+
+    carrito.push(productoElegido);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+function calcularTotalCarrito() {
     var total = 0;
     for (var i = 0; i < carrito.length; i++) {
-      total += carrito[i].precio;
+        total += carrito[i].precio;
     }
     return total;
-  }
-// let registrarme = document.querySelector("#registrarme")
-// registrarme.addEventListener("click", register)
+}
 
-//let agregarAlCarrito = document.querySelector("")
-let botones = document.querySelectorAll(".agregar")
+let botones = document.querySelectorAll(".agregar");
 botones.forEach(boton => {
     boton.addEventListener('click', () => {
-        let idProducto = boton.id;
+        agregarAlCarrito(parseInt(boton.id));
     })
 })
+
+// MOSTRAR EL CARRITO
+
+/*
+ 1. Tener el id del contenedor de la lista.
+ 2. Obetener la info del local storage.
+ 3. La recibo como string y debo pasarla a JSON.
+ 4. Mostrar la info en el DOM.
+ */
+
+let contenedorLista = document.querySelector('#carritoLista')
+let carritoLista = JSON.parse(localStorage.getItem('carrito'))
+
+for (let productoDelCarrito of carritoLista) {
+    contenedorLista.innerHTML += `
+        <ul class="carrito__lista">
+            <li>
+                <div class="carrito__tarjeta">
+                    <img  class="carrito__imagen" src=${productoDelCarrito.img} />
+                 </div>
+                 <p class="carrito__titulo">${productoDelCarrito.producto}</p>
+                <p class="carrito__precio">$${productoDelCarrito.precio}</p>
+                <div class="boton__eliminar" id="eliminar"><img class="boton" src="../images/equisCarrito.png"></div>
+            </li>
+        </ul>   
+     `
+}
+
+
+let botonEliminar = document.querySelectorAll('#eliminar')
+botonEliminar.splice(botonesEliminar => {
+    botonesEliminar.addEventListener('click', () => {
+        eliminarDelCarrito (botonesEliminar.id)
+    })
+})
+
+function eliminarDelCarrito(id) {
+    
+}
+

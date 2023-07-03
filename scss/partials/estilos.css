@@ -99,6 +99,59 @@ textarea {
     opacity: 1;
   }
 }
+/* TARJETA CARRITO */
+.contenedor__carrito {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+}
+.contenedor__carrito .contenedor__lista {
+  padding-left: 25px;
+}
+.contenedor__carrito .contenedor__lista .carrito__lista {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  width: 500px;
+}
+.contenedor__carrito .contenedor__lista .carrito__lista .carrito__tarjeta {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.contenedor__carrito .contenedor__lista .carrito__lista .carrito__tarjeta .carrito__imagen {
+  width: 100px;
+}
+.contenedor__carrito .contenedor__lista .carrito__lista .carrito__tarjeta .carrito__imagen img {
+  width: 100%;
+}
+.contenedor__carrito .contenedor__lista .carrito__lista .carrito__precio {
+  display: flex;
+  justify-content: flex-start;
+  font-size: smaller;
+  margin: 0;
+}
+.contenedor__carrito .contenedor__lista .carrito__lista .carrito__titulo {
+  display: flex;
+  justify-content: flex-start;
+  font-size: smaller;
+  padding-top: 5px;
+  margin: 0;
+}
+.contenedor__carrito .contenedor__lista .carrito__lista .boton__eliminar {
+  width: 15px;
+}
+.contenedor__carrito .contenedor__lista .carrito__lista .boton__eliminar img {
+  width: 100%;
+}
+.contenedor__carrito .total {
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
 .navbar {
   background-color: #6d7a71;
 }

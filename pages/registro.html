@@ -48,7 +48,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="./contacto.html">Contacto</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./login.html">Ingresar</a>
+                        </li>
                     </ul>
+                    <div class="carrito" id="carrito">
+                        <span id="contador-carrito">0</span>
+                        <a class="carrito__link" href="./carrito.html"><img src="../images/carritoTrans.png"
+                                alt="Carrito"></a>
+                    </div>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2  placeholder bg-light" type="search" placeholder="Buscador..."
                             aria-label="Search">
@@ -65,7 +73,8 @@
         <div class="registro__error" id="error"></div>
 
         <form class="form__registro">
-            <label class="registro__correo" for="correoElectronico">Correo electrónico:<input id="registro__correo" type="email"></label>
+            <label class="registro__correo" for="correoElectronico">Correo electrónico:<input id="registro__correo"
+                    type="email"></label>
             <label for="contraseña">Contraseña: <input id="registro__contraseña" type="password"></label>
             <label for="nombre">Nombre:<input id="registro__nombre" type="text"></label>
             <label for="primerApellido">Primer apellido:<input id="registro__primerApellido" type="text"></label>
