@@ -1,7 +1,5 @@
 // ****************************************** REGISTRO ******************************************
 
-
-
 // contenedores del dom
 function register(e) {
     e.preventDefault();
@@ -186,14 +184,6 @@ function agregarAlCarrito(id) {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
-function calcularTotalCarrito() {
-    var total = 0;
-    for (var i = 0; i < carrito.length; i++) {
-        total += carrito[i].precio;
-    }
-    return total;
-}
-
 let botones = document.querySelectorAll(".agregar");
 botones.forEach(boton => {
     boton.addEventListener('click', () => {
@@ -212,7 +202,11 @@ botones.forEach(boton => {
 
 let contenedorLista = document.querySelector('#carritoLista')
 let carritoLista = JSON.parse(localStorage.getItem('carrito'))
+if (!carritoLista) {
+    carritoLista = []
+}
 
+let contador = 0;
 for (let productoDelCarrito of carritoLista) {
     contenedorLista.innerHTML += `
         <ul class="carrito__lista">
@@ -222,21 +216,59 @@ for (let productoDelCarrito of carritoLista) {
                  </div>
                  <p class="carrito__titulo">${productoDelCarrito.producto}</p>
                 <p class="carrito__precio">$${productoDelCarrito.precio}</p>
-                <div class="boton__eliminar" id="eliminar"><img class="boton" src="../images/equisCarrito.png"></div>
+                <div class="boton__eliminar" id=${contador++}><img class="boton" src="../images/equisCarrito.png"></div>
             </li>
         </ul>   
      `
 }
 
+function eliminarDelCarrito(id) {
+    let carrito = JSON.parse(localStorage.getItem('carrito'));
 
-let botonEliminar = document.querySelectorAll('#eliminar')
-botonEliminar.splice(botonesEliminar => {
-    botonesEliminar.addEventListener('click', () => {
-        eliminarDelCarrito (botonesEliminar.id)
+    if (!carrito) {
+        carrito = [];
+        localStorage.setItem('carrito', JSON.parse(carrito));
+    }
+
+    carrito = carrito.filter((item, index) => index !== id);
+    console.log(carrito)
+
+    localStorage.setItem('carrito', JSON.stringify(carrito)); 
+    location.reload()
+}
+
+let botonesEliminar = document.querySelectorAll(".boton__eliminar");
+botonesEliminar.forEach(boton => {
+    boton.addEventListener('click', () => {
+        eliminarDelCarrito(parseInt(boton.id));
     })
 })
 
-function eliminarDelCarrito(id) {
-    
+function calcularTotal() {
+    const totalParrafo = document.querySelector("#monto_total");
+    let carrito = JSON.parse(localStorage.getItem('carrito'));
+
+    if (!carrito) {
+        totalParrafo.innerHTML = '$0';
+    } else {
+        let suma = 0;
+        for (const item of carrito){
+            suma += parseFloat(item['precio']);
+        };
+        totalParrafo.textContent = `$ ${suma}`;
+    }
 }
+
+calcularTotal();
+
+const btnPagar = document.querySelector('#pagar')
+btnPagar.addEventListener("click", () => {
+
+    Swal.fire ({
+        title: '¡Gracias!',
+        text: 'Tu compra ha sido confirmada.',
+        icon: 'success',
+        confirmButtonText: 'Acepto'
+    })
+})
 
