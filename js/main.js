@@ -1,6 +1,5 @@
 // ****************************************** REGISTRO ******************************************
 
-// contenedores del dom
 function register(e) {
     e.preventDefault();
     let divError = document.querySelector("#error")
@@ -81,8 +80,6 @@ function register(e) {
     mostrarInfo()
 }
 
-//let registrarme = document.querySelector("#registrarme")
-//registrarme.addEventListener("click", register)
 // ****************************************** MOSTRAR INFORMACIÓN ******************************************
 
 function mostrarInfo() {
@@ -134,8 +131,13 @@ for (let producto of productos) {
         <div class= "row">
             <div class="carta col-md-2">
                 <img class="tarjetitasai__imagen" src=${producto.img} />
-                <p>$${producto.precio} </p>
-                <button class="agregar ${producto.tipo}" id=${producto.id}>Agregar</button>
+
+
+
+
+
+
+
             </div>
         </div
         `
@@ -146,8 +148,11 @@ for (let producto of productos) {
             <div class= "row">
                 <div class="carta col-md-2">
                     <img class="tarjetitasai__imagen" src=${producto.img} />
-                    <p>$${producto.precio} </p>
-                    <button class="agregar ${producto.tipo}" id=${producto.id}>Agregar</button>
+
+
+
+
+
                 </div>
             </div>
             `
@@ -155,20 +160,7 @@ for (let producto of productos) {
     }
 }
 
-
 // ************************************************** CARRITO *************************************************
-
-/*
-    1. Localstorage
-        1.1 Validar la existencia del carrito en el local storage.
-    2. Crear la funcion agregar
-        2.1 Validar la existencia del carrito en el local storage.
-        2.2 Nos traemos el array de nuestro carrito del localstorage
-        2.3 Agregamos el nuevo producto al carrito
-        2.4 SetItem en local storage
-
-
-*/
 
 function agregarAlCarrito(id) {
     let carrito = JSON.parse(localStorage.getItem('carrito'));
@@ -190,15 +182,6 @@ botones.forEach(boton => {
         agregarAlCarrito(parseInt(boton.id));
     })
 })
-
-// MOSTRAR EL CARRITO
-
-/*
- 1. Tener el id del contenedor de la lista.
- 2. Obetener la info del local storage.
- 3. La recibo como string y debo pasarla a JSON.
- 4. Mostrar la info en el DOM.
- */
 
 let contenedorLista = document.querySelector('#carritoLista')
 let carritoLista = JSON.parse(localStorage.getItem('carrito'))
@@ -272,3 +255,12 @@ btnPagar.addEventListener("click", () => {
     })
 })
 
+
+
+//mezclas
+// <p>$${producto.precio} </p>
+// <button class="agregar ${producto.tipo}" id=${producto.id}>Agregar</button>
+
+// //aceites individuales
+// <p>$${producto.precio} </p>
+// <button class="agregar ${producto.tipo}" id=${producto.id}>Agregar</button>

@@ -152,6 +152,28 @@ textarea {
   overflow: hidden;
 }
 
+/* TARJETA PAGAR */
+.container__total {
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 25px;
+  height: 120px;
+  padding-bottom: 25px;
+}
+.container__total .container__pagar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.container__total .container__pagar .pagar__boton {
+  background-color: #6d7a71;
+  color: #efeadd;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
 .navbar {
   background-color: #6d7a71;
 }
@@ -169,10 +191,8 @@ textarea {
   }
 }
 .navbar .carrito {
-  width: 30px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  width: 50px;
+  padding-right: 20px;
 }
 .navbar .carrito img {
   width: 100%;
