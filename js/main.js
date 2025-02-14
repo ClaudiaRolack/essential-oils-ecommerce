@@ -1,3 +1,49 @@
+// ****************************************** Creador de Objetos ******************************************
+class ai {
+    constructor(id, producto, precio) {
+        this.id = id;
+        this.producto = producto;
+        this.precio = precio;
+    }
+}
+
+class am {
+    constructor(id, producto, precio) {
+        this.id = id;
+        this.producto = producto;
+        this.precio = precio;
+    }
+}
+
+// ****************************************** GENERADOR DE TARJETAS ******************************************
+const contenedorDeProductos = document.querySelector("#contenedor");
+
+// TARJETAS AI
+const urlActual = `/public/images/${producto.img}`;
+for (let producto of productos) {
+    if ('http://127.0.0.1:5500/pages/aceitesindividuales.html' === urlActual) {
+        if (producto.tipo === 'ai') {
+            contenedorDeProductos.innerHTML += `
+                <div class= "row">
+                    <div class="carta col-md-2">
+                        <img class="tarjetitasai__imagen" src="/public/images/${producto.img}" />
+                    </div>
+                </div>
+            `;
+        }
+    } else if ('http://127.0.0.1:5500/pages/mezclas.html' === urlActual) {
+        if (producto.tipo === 'am') {
+            contenedorDeProductos.innerHTML += `
+                <div class= "row">
+                    <div class="carta col-md-2">
+                        <img class="tarjetitasai__imagen" src="/public/images/${producto.img}" />
+                    </div>
+                </div>
+            `;
+        }
+    }
+}
+
 // ****************************************** REGISTRO ******************************************
 
 function register(e) {
@@ -98,68 +144,6 @@ function mostrarInfo() {
                 `
 }
 
-// ****************************************** Creador de Objetos ******************************************
-class ai {
-    constructor(id, producto, precio) {
-        this.id = id;
-        this.producto = producto;
-        this.precio = precio;
-    }
-}
-
-class am {
-    constructor(id, producto, precio) {
-        this.id = id;
-        this.producto = producto;
-        this.precio = precio;
-    }
-}
-
-
-
-
-// ****************************************** GENERADOR DE TARJETAS ******************************************
-const contenedorDeProductos = document.querySelector("#contenedor");
-
-// TARJETAS AI
-const urlActual = window.location.href;
-console.log(urlActual)
-for (let producto of productos) {
-    if ('http://127.0.0.1:5500/pages/aceitesindividuales.html' === urlActual) {
-        if (producto.tipo === 'ai') {
-            contenedorDeProductos.innerHTML += `
-        <div class= "row">
-            <div class="carta col-md-2">
-                <img class="tarjetitasai__imagen" src=${producto.img} />
-
-
-
-
-
-
-
-            </div>
-        </div
-        `
-        }
-    } else if ('http://127.0.0.1:5500/pages/mezclas.html' === urlActual) {
-        if (producto.tipo === 'am') {
-            contenedorDeProductos.innerHTML += `
-            <div class= "row">
-                <div class="carta col-md-2">
-                    <img class="tarjetitasai__imagen" src=${producto.img} />
-
-
-
-
-
-                </div>
-            </div>
-            `
-        }
-    }
-}
-
 // ************************************************** CARRITO *************************************************
 
 function agregarAlCarrito(id) {
@@ -216,7 +200,7 @@ function eliminarDelCarrito(id) {
     carrito = carrito.filter((item, index) => index !== id);
     console.log(carrito)
 
-    localStorage.setItem('carrito', JSON.stringify(carrito)); 
+    localStorage.setItem('carrito', JSON.stringify(carrito));
     location.reload()
 }
 
@@ -235,19 +219,19 @@ function calcularTotal() {
         totalParrafo.innerHTML = '$0';
     } else {
         let suma = 0;
-        for (const item of carrito){
+        for (const item of carrito) {
             suma += parseFloat(item['precio']);
         };
-        totalParrafo.textContent = `$ ${suma}`;
+        totalParrafo.textContent = $`${suma}`;
     }
 }
 
-calcularTotal();
+if (document.querySelector('#monto_total')) { calcularTotal(); }
 
 const btnPagar = document.querySelector('#pagar')
-btnPagar.addEventListener("click", () => {
+btnPagar?.addEventListener("click", () => {
 
-    Swal.fire ({
+    Swal.fire({
         title: '¡Gracias!',
         text: 'Tu compra ha sido confirmada.',
         icon: 'success',
@@ -256,8 +240,7 @@ btnPagar.addEventListener("click", () => {
 })
 
 
-
-//mezclas
+// mezclas
 // <p>$${producto.precio} </p>
 // <button class="agregar ${producto.tipo}" id=${producto.id}>Agregar</button>
 
