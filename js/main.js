@@ -19,9 +19,9 @@ class am {
 const contenedorDeProductos = document.querySelector("#contenedor");
 
 // TARJETAS AI
-const urlActual = `/public/images/${producto.img}`;
+const urlActual = window.location.pathname;;
 for (let producto of productos) {
-    if ('http://127.0.0.1:5500/pages/aceitesindividuales.html' === urlActual) {
+    if (urlActual.includes("/pages/aceitesindividuales")) {
         if (producto.tipo === 'ai') {
             contenedorDeProductos.innerHTML += `
                 <div class= "row">
@@ -31,7 +31,7 @@ for (let producto of productos) {
                 </div>
             `;
         }
-    } else if ('http://127.0.0.1:5500/pages/mezclas.html' === urlActual) {
+    } else if (urlActual.includes("/pages/mezclas")) {
         if (producto.tipo === 'am') {
             contenedorDeProductos.innerHTML += `
                 <div class= "row">
