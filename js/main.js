@@ -19,7 +19,7 @@ class am {
 const contenedorDeProductos = document.querySelector("#contenedor");
 
 // TARJETAS AI
-const urlActual = window.location.pathname;;
+const urlActual = window.location.pathname;
 for (let producto of productos) {
     if (urlActual.includes("/pages/aceitesindividuales")) {
         if (producto.tipo === 'ai') {
