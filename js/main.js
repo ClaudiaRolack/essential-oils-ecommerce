@@ -26,7 +26,7 @@ for (let producto of productos) {
             contenedorDeProductos.innerHTML += `
                 <div class= "row">
                     <div class="carta col-md-2">
-                        <img class="tarjetitasai__imagen" src="/public/images/${producto.img}" />
+                        <img class="tarjetitasai__imagen" src="/images/${producto.img}" />
                     </div>
                 </div>
             `;
@@ -36,7 +36,7 @@ for (let producto of productos) {
             contenedorDeProductos.innerHTML += `
                 <div class= "row">
                     <div class="carta col-md-2">
-                        <img class="tarjetitasai__imagen" src="/public/images/${producto.img}" />
+                        <img class="tarjetitasai__imagen" src="/images/${producto.img}" />
                     </div>
                 </div>
             `;
