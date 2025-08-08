@@ -50,6 +50,8 @@ npm install sweetalert2
 
 3. Abre el archivo index.html direcatmente en tu navegador.
 
+---
+
 # 🛠 Tecnologías usadas
 
 - **Node.js:** Entorno de ejecución JavaScript (solo en desarrollo/local).
