@@ -45,7 +45,7 @@ cd essential-oils-ecommerce
 
 2. Instala las dependecias:
 ```bash
-npm install sweetalert2
+npm i
 ```
 
 3. Abre el archivo index.html direcatmente en tu navegador.
